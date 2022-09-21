@@ -14,7 +14,6 @@ Console.WriteLine("Enter third number: ");
 int c = int.Parse(Console.ReadLine()!);
 
 int max = a;
-int result;
 
 if (b > max)
 max = b;
