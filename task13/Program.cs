@@ -28,5 +28,5 @@ if ( n < Math.Pow(10, x - 1)) {
             n = n % 10;
         }
     }
-    Console.WriteLine(n % 10);   
+    Console.WriteLine(n);   
 }
