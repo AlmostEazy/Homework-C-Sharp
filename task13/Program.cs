@@ -6,22 +6,27 @@
 
 32679 -> 6 */
 
+// Для нахождения любого разряда
+
 Console.Clear();
 
 Console.Write("Введите число: ");
-int n = int.Parse(Console.ReadLine()!);
+int n = (int)Math.Abs(int.Parse(Console.ReadLine()!));
 Console.Write("Введите искомый разряд: ");
 int x = int.Parse(Console.ReadLine()!);
 
 
 if ( n < Math.Pow(10, x - 1)) {
-    Console.WriteLine("Третьей цифры нет");
+    Console.WriteLine("Искомого разряда нет");
 } else if (n < Math.Pow(10, x)) {
     n = n % 10;
     Console.WriteLine(n);
 } else {
-    while ( n > Math.Pow(10, x - 1) ) {
+    while ( n > Math.Pow(10, x)) {
         n = n / 10;
+        if (n < Math.Pow(10, x)) {
+            n = n % 10;
+        }
     }
-    Console.WriteLine(n % 10);
+    Console.WriteLine(n % 10);   
 }
