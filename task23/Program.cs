@@ -15,12 +15,11 @@ if (n < 1) {
 }
 
 for ( int count = 1; count <= n; count++) {
-    Console.Write(Math.Pow(count, 3)); 
-
-if (count != n) {
-    Console.Write(", ");
-} 
-      
+    Console.Write(Math.Pow(count, 3));
+    
+    if (count != n) {
+        Console.Write(", ");
+    }     
 }
 
 
