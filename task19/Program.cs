@@ -22,7 +22,9 @@ secondDigit = (n / 1000) % 10;
 fourthDigit = (n / 10) % 10;
 fifthDigit = n % 10;
 
-if ((firstDigit == fifthDigit) && (secondDigit == fourthDigit)) {
+if ((n < 10000) || (n > 99999)) {
+    Console.WriteLine("Вы ввели не пятизначное число! Повторите попытку!");
+} else if ((firstDigit == fifthDigit) && (secondDigit == fourthDigit)) {
     Console.WriteLine("Это палиндром!");
 } else {
     Console.WriteLine("Это не палиндром!");
