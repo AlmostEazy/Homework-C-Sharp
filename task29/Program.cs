@@ -36,12 +36,12 @@ PrintArray(arrey); */
 
 /* Для любой длины массива */
 
-int [] CreateArrey( int n ) {
+int [] CreateArray( int n ) {
     int[] arr = new int [n];
     return arr;
 }
 
-void FillArrey(int[] arr) {
+void FillArray(int[] arr) {
     for (int i = 0; i < arr.Length; i++) {
         arr[i] = new Random().Next(int.MinValue, int.MaxValue);
     }
@@ -61,6 +61,6 @@ void PrintArray(int[] print) {
 Console.Write("Введите длину массива: ");
 int a = int.Parse(Console.ReadLine()!);
 
-int[] arrey = CreateArrey(a);
-FillArrey(arrey);
-PrintArray(arrey);
+int[] array = CreateArray(a);
+FillArray(array);
+PrintArray(array);
