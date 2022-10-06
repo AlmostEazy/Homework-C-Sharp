@@ -4,21 +4,21 @@
 
 Console.Clear();
 
-float [] CreateArray(int number) {
-    float[] array = new float[number];
+double [] CreateArray(int number) {
+    double[] array = new double[number];
     return array;
 }
 
-void FillArray(float[] array) {
+void FillArray(double[] array) {
     for ( int i = 0; i < array.Length; i++) {
-        array[i] = new Random().Next(-100, 101);
+        array[i] = new Random().NextDouble();
     }
 }
 
-void PrintArray(float[] print) {
+void PrintArray(double[] print) {
     Console.Write("[");
     for (int i = 0; i < print.Length; i++) {
-        Console.Write(print[i]);
+        Console.Write(Math.Round(print[i], 2));
         if ( i != print.Length - 1 ) {
             Console.Write(", ");
         }
@@ -27,9 +27,9 @@ void PrintArray(float[] print) {
     Console.WriteLine();
 }
 
-(float, float) FindMaxAndMin(float[] array) {
-    float max = array[0];
-    float min = array[0];
+(double, double) FindMaxAndMin(double[] array) {
+    double max = array[0];
+    double min = array[0];
     for (int i = 1; i < array.Length; i++) {
         if (array[i] > max) {
             max = array[i];
@@ -44,9 +44,9 @@ void PrintArray(float[] print) {
 Console.Write("Введите длину массива: ");
 int n = int.Parse(Console.ReadLine()!);
 
-float[] arr = CreateArray(n);
+double[] arr = CreateArray(n);
 FillArray(arr);
 PrintArray(arr);
 var result = FindMaxAndMin(arr);
-Console.WriteLine($"max: {result.Item1}, min: {result.Item2}");
-Console.WriteLine($"Разность между максимальным элементом и минимальным: {result.Item1 - result.Item2}");
+Console.WriteLine($"max: {Math.Round(result.Item1, 2)}, min: {Math.Round(result.Item2, 2)}");
+Console.WriteLine($"Разность между максимальным элементом и минимальным: {Math.Round(result.Item1 - result.Item2, 2)}");
